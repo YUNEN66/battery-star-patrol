@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "电池星巡 · 设备电池健康度",
+  "short_name": "电池星巡",
+  "description": "一眼看懂电池状态、健康度与容量。只读取系统开放的信息，不上传数据。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#101019",
+  "theme_color": "#101019",
+  "categories": ["utilities"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

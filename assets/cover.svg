@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="sky" x2="1" y2="1">
+      <stop stop-color="#15131e"/>
+      <stop offset=".52" stop-color="#202037"/>
+      <stop offset="1" stop-color="#10171e"/>
+    </linearGradient>
+    <radialGradient id="aura">
+      <stop stop-color="#f778c8" stop-opacity=".4"/>
+      <stop offset=".5" stop-color="#9c8bff" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#9c8bff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x2=".95" y2="1">
+      <stop stop-color="#2a293c"/>
+      <stop offset="1" stop-color="#151821"/>
+    </linearGradient>
+    <linearGradient id="ring" x2="1" y2="1">
+      <stop stop-color="#80f3e5"/>
+      <stop offset=".5" stop-color="#a99bff"/>
+      <stop offset="1" stop-color="#f772c4"/>
+    </linearGradient>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse">
+      <path d="M38 0H0V38" fill="none" stroke="#bdb8e8" stroke-opacity=".07"/>
+      <circle cx="2" cy="2" r="1" fill="#80f3e5" fill-opacity=".12"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  <rect width="1280" height="720" fill="url(#grid)"/>
+  <circle cx="925" cy="363" r="378" fill="url(#aura)"/>
+  <path d="M0 573h1280M0 603h1280M0 638h1280M0 678h1280" stroke="#b3aee6" stroke-opacity=".1"/>
+  <path d="m0 576 160-40 100 33 126-75 117 45 93-36 104 65 93-29 76 41 143-68 116 38 152-51v201H0z" fill="#12151d"/>
+  <path d="M0 636h1280v84H0z" fill="#10131b"/>
+  <path d="M890 571V315l62-57 62 57v256m16 0V357l78-66 78 66v214m-513 0V401l75-56 57 42v184" fill="none" stroke="#8d8bab" stroke-opacity=".23" stroke-width="8"/>
+  <path d="M952 258v313m62-214v214m94-280v280m77-214v214m-638-226v225" stroke="#80f3e5" stroke-opacity=".16" stroke-width="4"/>
+  <g fill="#f772c4" fill-opacity=".54">
+    <path d="M918 330h18v30h-18zm52-40h13v23h-13zm110 101h22v34h-22zm89-7h14v25h-14zm-678 55h20v36h-20z"/>
+  </g>
+  <g fill="#80f3e5" fill-opacity=".65">
+    <path d="M957 385h14v22h-14zm104 110h20v34h-20zm101-104h13v23h-13zM784 446h14v23h-14z"/>
+  </g>
+  <circle cx="981" cy="267" r="191" fill="none" stroke="url(#ring)" stroke-opacity=".45" stroke-width="3"/>
+  <circle cx="981" cy="267" r="155" fill="none" stroke="#e9e5ff" stroke-opacity=".22" stroke-width="2" stroke-dasharray="2 13"/>
+  <path d="m981 86 31 69 70 3-53 47 17 70-65-37-64 38 14-70-53-48 72-2z" fill="url(#glass)" stroke="url(#ring)" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="953" y="166" width="57" height="87" rx="17" fill="#141820" stroke="#80f3e5" stroke-width="3"/>
+  <path d="M967 195h28m-28 15h28m-28 15h17" stroke="#80f3e5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M899 267h-35m232 0h-34M981 87v-35m0 430v-35" stroke="#f772c4" stroke-width="3"/>
+  <circle cx="865" cy="267" r="6" fill="#f772c4"/><circle cx="1144" cy="267" r="6" fill="#f772c4"/>
+  <path d="M50 54h37m-37 0v37m1180-37h-37m37 0v37M50 666h37m-37 0v-37m1180 37h-37m37 0v-37" fill="none" stroke="#80f3e5" stroke-width="2" stroke-opacity=".5"/>
+  <text x="78" y="101" fill="#80f3e5" font-family="Consolas,monospace" font-size="16" letter-spacing="5">DEVICE CARE / PERSONAL BATTERY SCANNER</text>
+  <text x="74" y="225" fill="#f8f6ff" font-family="Microsoft YaHei,sans-serif" font-size="68" font-weight="700" letter-spacing="-3">电池<tspan fill="#f772c4">星巡</tspan></text>
+  <text x="80" y="275" fill="#e1ddec" font-family="Microsoft YaHei,sans-serif" font-size="24">一眼读懂电池，把续航握在手里。</text>
+  <path d="M80 325h398" stroke="#9589ba" stroke-opacity=".34"/>
+  <text x="80" y="370" fill="#aaa6bc" font-family="Microsoft YaHei,sans-serif" font-size="17">Windows 系统实测容量 · Android 如实展示</text>
+  <text x="80" y="403" fill="#aaa6bc" font-family="Microsoft YaHei,sans-serif" font-size="17">原创霓虹都市 · 离线可用 · 不上传数据</text>
+  <rect x="80" y="467" width="142" height="37" rx="7" fill="#f772c4"/>
+  <text x="101" y="492" fill="#241323" font-family="Consolas,monospace" font-size="14" font-weight="700" letter-spacing="2">STAY POWERED</text>
+  <text x="80" y="687" fill="#777489" font-family="Consolas,monospace" font-size="12" letter-spacing="2">BATTERY STAR PATROL   ·   LOCAL FIRST   ·   01 / 04</text>
+  <g fill="#f3f0ff" fill-opacity=".7">
+    <circle cx="725" cy="128" r="2"/><circle cx="812" cy="177" r="2"/><circle cx="1067" cy="100" r="2"/>
+    <circle cx="1195" cy="190" r="3"/><circle cx="119" cy="523" r="2"/><circle cx="738" cy="312" r="2"/>
+  </g>
+</svg>

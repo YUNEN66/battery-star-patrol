@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#101019">
+    <meta name="description" content="清楚查看设备电池状况，了解容量、健康度和保养建议。">
+    <title>电池星巡 · 设备状态</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="电池星巡主页">
+          <img class="brand-mark" src="assets/icon.svg" alt="">
+          <span>电池<span class="brand-accent">星巡</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="privacy-chip"><span class="privacy-dot"></span>数据仅保存在本机</span>
+          <button id="install-button" class="install-button" type="button" hidden>安装应用</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero panel" aria-labelledby="main-heading">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow"><span class="eyebrow-mark">01</span> BATTERY SIGNAL / 实时状态</p>
+              <p id="connection-label" class="connection-label"><span class="signal-dot"></span>正在连接设备</p>
+              <h1 id="main-heading">电量之外，<br><span>了解电池。</span></h1>
+              <p id="hero-description" class="hero-description">正在读取系统开放的电池信息……</p>
+              <div id="status-badge" class="status-badge"><span class="badge-icon">✳</span> 正在检测</div>
+            </div>
+
+            <div class="battery-display" aria-hidden="true">
+              <div class="battery-top"></div>
+              <div class="battery-body">
+                <div class="battery-glow"></div>
+                <svg class="battery-orbit" viewBox="0 0 280 280">
+                  <circle cx="140" cy="140" r="115"></circle>
+                  <circle cx="140" cy="140" r="92"></circle>
+                  <path d="M25 140h34m162 0h34M140 25v34m0 162v34"></path>
+                  <path d="M45 58l22 22m146 120 22 22M235 58l-22 22M67 200l-22 22"></path>
+                </svg>
+                <div class="charge-number"><span id="charge-value">--</span><span class="charge-percent">%</span></div>
+                <p id="charge-caption" class="charge-caption">电量 / CHARGE</p>
+                <div class="battery-meter"><span id="charge-meter"></span></div>
+              </div>
+              <span class="battery-footnote">CELL STATUS <span id="cell-code">--</span></span>
+            </div>
+
+            <div class="hero-index">DEVICE<br>DIAGNOSTICS<br><span>NO. 001</span></div>
+          </div>
+          <div class="hero-footer">
+            <span id="device-description">正在识别设备类型</span>
+            <span class="updated-label"><span class="tiny-clock">◷</span> 最近读取 <time id="updated-at">--</time></span>
+          </div>
+        </section>
+
+        <section class="metrics-section" aria-labelledby="health-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR BATTERY, DECODED</p>
+              <h2 id="health-title">看懂健康度</h2>
+            </div>
+            <span class="section-number">02 / 04</span>
+          </div>
+
+          <div class="metrics-grid">
+            <article id="health-card" class="metric-card health-card panel">
+              <div class="card-label"><span class="card-symbol">◉</span> 电池健康度 <span class="live-pill">系统数据</span></div>
+              <div id="health-value" class="health-value">--<span>%</span></div>
+              <p id="health-caption" class="metric-note">等待系统容量数据</p>
+              <div class="health-rule" aria-hidden="true"><span id="health-rule-fill"></span></div>
+              <p id="health-source" class="source-note">健康度 = 满充容量 ÷ 设计容量</p>
+            </article>
+
+            <article class="metric-card panel">
+              <div class="card-label"><span class="card-symbol">⌁</span> 满充容量</div>
+              <div id="full-capacity" class="metric-value">--</div>
+              <p id="full-capacity-note" class="metric-note">完整充电后可用的容量</p>
+            </article>
+
+            <article class="metric-card panel">
+              <div class="card-label"><span class="card-symbol">⌑</span> 设计容量</div>
+              <div id="design-capacity" class="metric-value">--</div>
+              <p id="design-capacity-note" class="metric-note">电池出厂时的额定容量</p>
+            </article>
+
+            <article class="metric-card panel">
+              <div class="card-label"><span class="card-symbol">↻</span> 充电循环</div>
+              <div id="cycle-count" class="metric-value">--</div>
+              <p id="cycle-note" class="metric-note">完整循环一次约等于累计用完 100% 电量</p>
+            </article>
+          </div>
+
+          <div id="unavailable-panel" class="unavailable-panel panel" hidden>
+            <div class="unavailable-icon" aria-hidden="true">⌁</div>
+            <div>
+              <h3 id="unavailable-title">系统暂未开放电池健康度</h3>
+              <p id="unavailable-message">部分设备只开放当前电量，不向普通应用开放满充容量或健康度。此处不会猜测或生成数据。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="lower-grid" aria-label="使用说明与个性化工具">
+          <article class="guide-card panel">
+            <div class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow">FIELD GUIDE / 03</p>
+                <h2>读数怎么来的</h2>
+              </div>
+              <span class="guide-spark">✳</span>
+            </div>
+            <ol class="guide-list">
+              <li><span class="guide-index">01</span><div><strong>健康度是容量比，不是剩余电量</strong><p>用满充容量除以电池设计容量估算；它和屏幕上的当前电量不是一回事。</p></div></li>
+              <li><span class="guide-index">02</span><div><strong>数据来自操作系统，不是检测芯片</strong><p id="source-explainer">Windows 电池报告会提供设计容量和最近满充容量，设备固件与系统报告可能有误差。</p></div></li>
+              <li><span class="guide-index">03</span><div><strong>没有开放的读数，就不编造</strong><p>不同设备、系统版本和厂商提供的数据不同。温度仅在来源可靠时才会显示。</p></div></li>
+            </ol>
+          </article>
+
+          <article class="tips-card panel">
+            <div class="section-heading compact-heading">
+              <div>
+                <p class="eyebrow">CARE / 04</p>
+                <h2>日常养护小贴士</h2>
+              </div>
+              <span class="tips-spark">✳</span>
+            </div>
+            <div class="tip-highlight"><span class="tip-icon">↗</span><p>热量才是电池的头号对手。<br><strong>打游戏时记得给设备散散热。</strong></p></div>
+            <div class="tip-footer"><span>避免长期处于高温</span><span class="tip-separator">/</span><span>使用可信赖的充电器</span></div>
+          </article>
+        </section>
+
+        <section class="manual-section panel" aria-labelledby="manual-title">
+          <div class="manual-copy">
+            <p class="eyebrow">OPTIONAL / LOCAL ONLY</p>
+            <h2 id="manual-title">自己填写容量</h2>
+            <p>如果系统或厂商设置显示了容量，可以手动记录并估算。手填结果会标记为“手动估算”，不会冒充系统读数。</p>
+          </div>
+          <form id="manual-form" class="manual-form">
+            <label>满充容量 <span>mAh</span><input id="manual-full" name="full" inputmode="decimal" type="number" min="1" max="200000" step="any" placeholder="例如 4,800" required></label>
+            <label>设计容量 <span>mAh</span><input id="manual-design" name="design" inputmode="decimal" type="number" min="1" max="200000" step="any" placeholder="例如 5,000" required></label>
+            <div class="manual-actions"><button class="primary-button" type="submit">保存并估算 <span>↗</span></button><button id="clear-manual" class="text-button" type="button">清除记录</button></div>
+            <p id="manual-message" class="form-message" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <details id="android-guide" class="android-guide panel">
+          <summary><span class="android-mark">◎</span> Android 手机为什么读不到健康度？</summary>
+          <div class="android-details">
+            <p>Android 公共应用接口通常只提供充电状态与当前电量，并不通用开放电池健康度、满充容量、循环次数或温度。即使应用能读当前电量，也不代表能读出电池健康度。</p>
+            <p>可先查看手机自带的<strong>设置 → 电池</strong>或厂商的<strong>设备诊断 / 电池健康</strong>页面；有些机型才会显示这些数据。若找不到，属于系统未开放，不是应用坏了。也可以在上方录入厂商给出的容量作手动参考。</p>
+          </div>
+        </details>
+      </main>
+
+      <footer class="footer">
+        <span>电池星巡 <span class="footer-separator">·</span> 一眼读懂电池</span>
+        <span>离线可用 <span class="footer-separator">/</span> 不上传设备数据</span>
+      </footer>
+    </div>
+    <noscript><div class="noscript-banner">请启用浏览器 JavaScript 后查看设备电池状态。</div></noscript>
+  </body>
+</html>
